@@ -1,0 +1,26 @@
+.centered {
+	text-align: center;
+}
+
+.picture {
+	height: 150px;
+	width: auto;
+}
+
+button {
+	margin: 5px;
+}
+
+.dog {
+	list-style: none;
+	display: inline-block;
+	margin: 20px;
+	font-size: 20px;
+}
+
+.x {
+	position: absolute;
+	color: red;
+	font-size: 20px;
+	height: 25px; 
+}
