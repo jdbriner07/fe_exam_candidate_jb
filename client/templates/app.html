@@ -1,0 +1,15 @@
+<div>
+	<search dogs-caught='ctrl.dogsCaught' dogs-list='ctrl.dogsList' />
+</div>
+<div>
+	<random dogs-caught='ctrl.dogsCaught'/>
+</div>
+<button ng-click=ctrl.clearDogs()>Clear All!</button>
+<div>
+	<br/>
+
+	<ul>
+		<li ng-repeat='dog in ctrl.dogsCaught'>{{dog.breed}} <image src={{dog.picture}} /> <div ng-click='ctrl.dogsCaught.splice($index ,1)'>X</div></li>
+	</ul>
+	<div ng-if='!ctrl.dogsCaught.length'>Try to catch some dogs!</div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "name": "fe_exam_candidate_jb",
+  "version": "1.0.0",
+  "description": "This repo contains an exercise intended for Front-End Engineers.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdbriner07/fe_exam_candidate_jb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdbriner07/fe_exam_candidate_jb/issues"
+  },
+  "homepage": "https://github.com/jdbriner07/fe_exam_candidate_jb#readme",
+  "dependencies": {
+    "angular": "^1.6.6",
+    "express": "^4.15.4"
+  }
+}
