@@ -12,3 +12,12 @@ This repo contains an exercise intended for Front-End Engineers.
 ## Expectations
 1. Please take no more than 8 hours to work on this exercise. Complete as much as possible and then submit your solution.
 1. This exercise is meant to showcase how you work. With consideration to the time limit, do your best to treat it like a production system.
+
+
+## How To
+1. Make sure your computer has Node,js installed.
+2. Navigate to the directory.
+3. Run 'npm install'.
+4. Run 'npm start' the application will run on port 3000.
+
+## Assumptions
