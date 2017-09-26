@@ -2,15 +2,16 @@ angular.module('dogCatcher')
 .controller('searchController', function($scope, $http) {
 	$scope.ctrl.dogToBeCaught = '';
 	$scope.ctrl.errorMessage = '';
-	$scope.ctrl.catchDog = function() {
-		if (!$scope.ctrl.dogToBeCaught) {
-			$scope.ctrl.errorMessage = 'Please specify a dog';
+	$scope.ctrl.catchDog = function(dog) {
+		dog = dog || $scope.ctrl.dogToBeCaught;
+		if ($scope.ctrl.dogsList.indexOf(dog) < 0) {
+			$scope.ctrl.errorMessage = 'Please specify a dog from the typeahead';
 		} else {
-			let dog = $scope.ctrl.dogToBeCaught.split('-'), url;
-			if (dog.length === 1) {
-				url = `https://dog.ceo/api/breed/${dog[0]}/images/random`;
+			let dogArr = dog.split('-'), url;
+			if (dogArr.length === 1) {
+				url = `https://dog.ceo/api/breed/${dogArr[0]}/images/random`;
 			} else {
-				url = `https://dog.ceo/api/breed/${dog[0]}/${dog[1]}/images/random`;
+				url = `https://dog.ceo/api/breed/${dogArr[0]}/${dogArr[1]}/images/random`;
 			}
 			$http({
 				method: 'GET',
@@ -18,7 +19,7 @@ angular.module('dogCatcher')
 			}).then(function(response) {
 				if (response.data.status === 'success') {
 					let breed = response.data.message.split('/')[5];
-					$scope.ctrl.dogsCaught.push({breed: breed, picture: response.data.message});
+					$scope.ctrl.dogsCaught.unshift({breed: breed, picture: response.data.message});
 					$scope.ctrl.errorMessage = '';
 				} else {
 					$scope.ctrl.errorMessage = 'That breed doesn\'t exist!';
@@ -33,7 +34,7 @@ angular.module('dogCatcher')
 .directive('search', function() {
 	return {
 		scope: {
-			dogsCaught: '=',
+			dogsCaught: '<',
 			dogsList: '<'
 		},
 		controller: 'searchController',

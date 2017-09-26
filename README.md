@@ -15,9 +15,13 @@ This repo contains an exercise intended for Front-End Engineers.
 
 
 ## How To
-1. Make sure your computer has Node,js installed.
+1. Make sure your computer has Node.js installed.
 2. Navigate to the directory.
 3. Run 'npm install'.
 4. Run 'npm start' the application will run on port 3000.
 
 ## Assumptions
+1. Any Breed of dog that has a sub-breed the typeahead populates with only combinations in the format 'breed'-'sub-breed'
+2. Angular-ui-bootstrap in combination with bootstrap was used to implement the typeahead. 
+3. Currently the list for the typeahead is populate with a request to the dogs.ceo domain when the 'appController' is attached to the DOM; 
+	if I had more time I would have a prepopulated list and have a worker check dogs.ceo if they have a new breed and update the list

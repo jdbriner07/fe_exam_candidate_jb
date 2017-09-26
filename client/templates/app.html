@@ -9,7 +9,7 @@
 	<br/>
 
 	<ul>
-		<li class='dog' ng-repeat='dog in ctrl.dogsCaught'><image class='picture' src={{dog.picture}} /> <a class='x' ng-click='ctrl.dogsCaught.splice($index ,1)'>X</a><br/>{{dog.breed}}</li>
+		<li class='dog' ng-repeat='dog in ctrl.dogsCaught'><image class='picture' ng-src={{dog.picture}} /> <a class='x' ng-click='ctrl.dogsCaught.splice($index ,1)'>X</a><br/>{{dog.breed}}</li>
 	</ul>
 	<div ng-if='!ctrl.dogsCaught.length'>Try to catch some dogs!</div>
 </div>

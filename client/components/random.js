@@ -6,7 +6,7 @@ angular.module('dogCatcher')
 			url: 'https://dog.ceo/api/breeds/image/random'
 		}).then(function(response) {
 			let breed = response.data.message.split('/')[5];
-			$scope.ctrl.dogsCaught.push({breed: breed, picture: response.data.message});
+			$scope.ctrl.dogsCaught.unshift({breed: breed, picture: response.data.message});
 		}, function(response) {
 			console.log(response);
 		})
@@ -15,7 +15,7 @@ angular.module('dogCatcher')
 .directive('random', function() {
 	return {
 		scope: {
-			dogsCaught: '='
+			dogsCaught: '<'
 		},
 		controller: 'randomController',
 		controllerAs: 'ctrl',

@@ -1,6 +1,9 @@
 <form>
 	<label> What dog do you want to catch?
-		<input class='form-control' autocomplete='off' type='text' ng-model='ctrl.dogToBeCaught' uib-typeahead='dog for dog in ctrl.dogsList | filter:$viewValue | limitTo:8' name='dogBreed' />
+		<input class='form-control' autocomplete='off' type='text' ng-model='ctrl.dogToBeCaught' 
+		uib-typeahead='dog for dog in ctrl.dogsList | filter:$viewValue | limitTo:8' name='dogBreed' 
+		typeahead-on-select='ctrl.catchDog(dog)'
+		/>
 		<input type='submit' class='btn-primary' className='submit' value='Catch!' ng-click='ctrl.catchDog()'/>
 	</label>
 	<div>{{ctrl.errorMessage}}</div>
