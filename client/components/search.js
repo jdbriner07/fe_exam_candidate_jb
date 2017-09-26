@@ -5,7 +5,7 @@ angular.module('dogCatcher')
 	$scope.ctrl.catchDog = function(dog) {
 		dog = dog || $scope.ctrl.dogToBeCaught;
 		if ($scope.ctrl.dogsList.indexOf(dog) < 0) {
-			$scope.ctrl.errorMessage = 'Please specify a dog from the typeahead';
+			$scope.ctrl.errorMessage = 'Please specify a listed breed';
 		} else {
 			let dogArr = dog.split('-'), url;
 			if (dogArr.length === 1) {
@@ -22,6 +22,7 @@ angular.module('dogCatcher')
 					$scope.ctrl.dogsCaught.unshift({breed: breed, picture: response.data.message});
 					$scope.ctrl.errorMessage = '';
 				} else {
+					//should only accept values from the list but just in case
 					$scope.ctrl.errorMessage = 'That breed doesn\'t exist!';
 				}
 			}, function(response) {
